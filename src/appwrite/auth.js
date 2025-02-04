@@ -30,7 +30,11 @@ class authService{
 
 
  async logout(){
-    return await this.account.deleteSessions();
+    try {
+        return await this.account.deleteSessions();
+    } catch (error) {
+        throw error
+    }
  }
  async currentUser(){
     try {
