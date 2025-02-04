@@ -29,10 +29,11 @@ class authService{
  }
  async currentUser(){
     try {
-        
+        return await this.account.get()
     } catch (error) {
         throw error
     }
+    return null;
  }
 
 }
