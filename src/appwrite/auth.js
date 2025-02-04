@@ -27,6 +27,11 @@ class authService{
         throw error
     }
  }
+
+
+ async logout(){
+    return await this.account.deleteSessions();
+ }
  async currentUser(){
     try {
         return await this.account.get()
