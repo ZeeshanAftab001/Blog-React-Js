@@ -133,6 +133,20 @@ class Services{
             return false
         }
     }
+
+    async previewFile(fileId){
+        try {
+
+            return this.bucket.getFilePreview(
+
+                config.app_bucket,
+                fileId
+
+            )
+        } catch (error) {
+            throw error
+        }
+    }
 }
 
 const service=new Services()
