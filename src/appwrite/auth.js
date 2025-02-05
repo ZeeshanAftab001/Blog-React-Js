@@ -8,7 +8,7 @@ class authService{
  constructor(){
     this.client.setEndpoint(config.app_write_url)
     .setProject(config.app_project_id)
-    this.account=Account(this.client)
+    this.account=new Account(this.client)
  }
  async register(name,email,password){
     try {
@@ -47,6 +47,6 @@ class authService{
 
 }
 
-const auth=authService()
+const auth=new authService()
 
 export default auth;
