@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { userData } from "three/tsl";
 
 
 const initialState ={
     status:false,
-    userData
+    //status:false,
+    userData:{},
 }
 
 const authSlice=createSlice(
     {
         name:"auth",
         initialState,
-        reducer:{
+        reducers:{
             login : (state,action)=>{
                 state.status=true
-                state.userData=action.payload.userData
+                state.userData=action.payload
 
             },
             logout:(state)=>{
                 state.status=false
-                state.userData=null
+                state.userData={}
             }
         }
     }
@@ -27,3 +27,5 @@ const authSlice=createSlice(
 export default authSlice.reducer;
 
 export const {login,logout} = authSlice.actions
+
+
