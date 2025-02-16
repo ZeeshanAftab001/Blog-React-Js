@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { login, logout } from './store/authSlice.js';
 import { Outlet } from 'react-router-dom';
 import Container from './components/Container/Container.jsx';
+import Login from './components/Login/Login.jsx';
+
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -26,6 +28,10 @@ function App() {
       <Header />
       <main>
         <Outlet />
+        <Container>
+        <Login />
+        </Container>
+        
       </main>
       <Footer /> {/* Make sure to include your Footer */}
  

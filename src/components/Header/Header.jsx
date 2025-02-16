@@ -31,9 +31,9 @@ function Header() {
     ];
 
     return (
-        <header>
-       
-            <Container>
+        <header className="bg-amber-400">
+           
+            <Container >
                 <div className="flex">
                 <div className='mr-4'>
                     <Link to="/">Logo</Link>
@@ -59,6 +59,7 @@ function Header() {
 
                 </div>
             </Container>
+           
         </header>
     );
 }
