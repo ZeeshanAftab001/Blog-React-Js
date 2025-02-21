@@ -16,8 +16,8 @@ export default function Login() {
     const onSubmit = async (data) => {
         setError('');
         try {
-           // const session = await auth.login(email=data.email,password=data.password);
-            const session = await auth.login(data);
+           const session = await auth.login(data.email,data.password);
+            //const session = await auth.login(data);
             if (session) {
                 const userData = await auth.currentUser();
                 if (userData) {
