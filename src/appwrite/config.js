@@ -37,13 +37,13 @@ class Services{
        
     }
 
-    async getBlog(id){
+    async getBlog(slug){
         try {
 
             return await this.database.getDocument(
                 config.app_database,
                 config.app_collection,
-                id
+                slug
             )
             
         } catch (error) {
@@ -51,7 +51,7 @@ class Services{
         }
     }
 
-    async updateBlog(id,{title,body,slug,featuredImage,status}){
+    async updateBlog(slug,{title,body,featuredImage,status}){
         try {
 
             return await this.database.updateDocument(

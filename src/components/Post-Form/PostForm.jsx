@@ -3,7 +3,7 @@ import {useSelector} from "react-redux"
 import Input from "../Input/Input.jsx"
 import Button from "../Button.jsx"
 import Select from "../Select/Select.jsx"
-import { useForm,Form } from 'react-hook-form'
+import { useForm, } from 'react-hook-form'
 import { useEffect,useCallback } from 'react'
 import RTE from '../RTE/RTE'
 import service from '../../appwrite/config.js'

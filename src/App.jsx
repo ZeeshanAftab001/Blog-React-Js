@@ -5,9 +5,6 @@ import auth from '../src/appwrite/auth.js';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './store/authSlice.js';
 import { Outlet } from 'react-router-dom';
-import Container from './components/Container/Container.jsx';
-import Login from './components/Login/Login.jsx';
-import Signup from './components/Signup/Signup.jsx';
 
 
 function App() {
@@ -25,23 +22,16 @@ function App() {
   }, [dispatch]);
 
   return !loader ? (
-    <div className='w-screen h-screen'>
-      <Header />
-      <main>
-        <Outlet />
-        <Container>
-        <Signup />
-        </Container>
-        
-      </main>
-      <Footer /> {/* Make sure to include your Footer */}
- 
-
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+      <div className='w-full block'>
+        <Header />
+        <main>
+        TODO:  <Outlet />
+        </main>
+        <Footer />
+      </div>
     </div>
-    
-  ) : (
-    <div>Loading...</div> // Display loading indicator
-  );
+  ) : null
 }
 
 export default App;
