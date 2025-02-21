@@ -7,6 +7,7 @@ import { login, logout } from './store/authSlice.js';
 import { Outlet } from 'react-router-dom';
 import Container from './components/Container/Container.jsx';
 import Login from './components/Login/Login.jsx';
+import Signup from './components/Signup/Signup.jsx';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       <main>
         <Outlet />
         <Container>
-        <Login />
+        <Signup />
         </Container>
         
       </main>
