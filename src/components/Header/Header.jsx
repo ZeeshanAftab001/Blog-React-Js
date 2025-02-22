@@ -14,8 +14,8 @@ function Header() {
             active: authStatus,
         },
         {
-            name: "Contact",
-            slug: "/contact",
+            name: "Add Post",
+            slug: "/add-post",
             active: authStatus,
         },
         {
@@ -31,35 +31,40 @@ function Header() {
     ];
 
     return (
-        <header className="bg-amber-400">
-           
-            <Container >
-                <div className="flex">
-                <div className='mr-4'>
-                    <Link to="/">Logo</Link>
-                </div>
-                <ul className="flex gap-4 ml-4 ">
-                    {navItems.map((item) => item.active ?
-                        <li key={item.name}>
-                        <Link to={item.slug}>
-                            {/* Link wrapping for proper navigation */}
-                        
-                         {item.name}
-                        </Link>
-                        </li>:null
+        <header className="bg-amber-400 py-4">
+            <Container>
+                <div className="flex justify-between items-center">
+                    {/* Logo */}
+                    <div className='text-xl font-semibold text-white'>
+                        <Link to="/">Logo</Link>
+                    </div>
 
-                    )}
+                    {/* Navigation Menu */}
+                    <nav>
+                        <ul className="flex gap-6">
+                            {navItems.map((item) => 
+                                item.active ? (
+                                    <li key={item.name}>
+                                        <Link
+                                            to={item.slug}
+                                            className="text-white hover:text-amber-600 transition duration-300"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ) : null
+                            )}
 
-                    {authStatus && (  // if user is loggedin it must show a logout button
-                        <li>
-                            <LogoutBtn />
-                        </li>
-                    )}
-                </ul>
-
+                            {/* Show Logout button when user is authenticated */}
+                            {authStatus && (
+                                <li>
+                                    <LogoutBtn />
+                                </li>
+                            )}
+                        </ul>
+                    </nav>
                 </div>
             </Container>
-           
         </header>
     );
 }
